@@ -6,6 +6,7 @@ class Comment < ApplicationRecord
   validates :text, presence: true, length: { minimum: 1, maximum: 1000 }
 
   private
+
   def comments_counter
     post.update(comments_count: post.comments.all.length)
   end
