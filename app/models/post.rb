@@ -2,7 +2,7 @@ class Post < ApplicationRecord
   belongs_to :author, class_name: 'User', foreign_key: 'author_id'
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
-  after_save :likes_counter
+  after_save :update_author_posts_count
 
   validates :title, presence: true, length: { minimum: 1, maximum: 20 }
   validates :text, presence: true, length: { minimum: 1, maximum: 1000 }
@@ -13,7 +13,7 @@ class Post < ApplicationRecord
 
   private
 
-  def likes_counter
-    post.update(likes_count: post.likes.all.length)
+  def update_author_posts_count
+    author.update(posts_count: author.posts.count)
   end
 end
