@@ -1,0 +1,20 @@
+
+
+<div class="post-main-div">
+<b>
+post #<%= post.id%>  by <%= post.user.name%>
+</b>
+
+<p>
+
+<%= post.text%>
+</p>
+
+<div class="comments-and-like-container">
+	<p>Comments: <%= post.comments_count || 0 %></p>
+	<br/>
+	<p>Likes: <%= post.likes_count ||0 %></p>
+</div>
+
+</div>
+

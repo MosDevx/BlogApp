@@ -1,0 +1,13 @@
+
+		<%= link_to  user do %>
+		<div class='container'>
+			<%= image_tag user.photo , alt:"Profile Picture" %>
+			<h1> <%=user.name %>  </h1>
+			<div class='post-counter'>
+
+			<p>No of posts: <%=user.posts_count || 0 %></p>
+			</div>
+		</div>
+
+			<%end%>
+

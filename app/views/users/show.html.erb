@@ -1,1 +1,16 @@
-<h1>User ID is <%= @user %></h1>
+
+	<%= render 'user', user:@user	%>
+
+	<div class='bio-main-div'>
+
+
+	<h2>Bio</h2>
+		<%= @user.bio%>
+	</div>
+
+	<%= render @recent_posts	%>
+
+<%= link_to user_posts_path(@user) do %>
+<button>See All Posts</button>
+<%end%>
+
