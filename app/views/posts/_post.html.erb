@@ -19,10 +19,5 @@ post #<%= post.id%>  by <%= post.user.name%>
 <%= link_to new_user_post_comment_path(user_id:post.user_id,post_id:post.id) do %>
 	<button>Create New Comment</button>
 <%end%>
-
-<%= link_to  new_user_post_like_path(user_id:post.user_id,post_id:post.id) do %>
-	<button>Like This Comment</button>
-<%end%>
-
 </div>
 

@@ -8,13 +8,11 @@
 		<%= @user.bio%>
 	</div>
 
-
 	<%= link_to new_user_post_path(@user) do %>
 <button>Create New Post</button>
 <%end%>
 
-	<%= render @user.posts	%>
-
+	<%= render @recent_posts	%>
 
 <%= link_to user_posts_path(@user) do %>
 <button>See All Posts</button>
