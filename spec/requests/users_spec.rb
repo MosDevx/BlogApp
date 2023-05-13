@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Users', type: :request, :new => true  do
+RSpec.describe 'Users', type: :request, new: true do
   describe 'GET /index' do
     it 'returns http success' do
       get '/users/index'
@@ -16,7 +16,7 @@ RSpec.describe 'Users', type: :request, :new => true  do
 
     it 'returns the correct html placeholder text' do
       get '/users/1'
-      expect(response.body).to include("<h1>User ID is 1</h1>")
+      expect(response.body).to include('<h1>User ID is 1</h1>')
     end
   end
 end
