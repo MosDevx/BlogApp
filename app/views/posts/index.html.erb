@@ -1,1 +1,3 @@
-<h1>These are the posts for the user</h1>
+<%= render @user%>
+
+<%= render partial: "posts/postandcomments", collection:@posts %>

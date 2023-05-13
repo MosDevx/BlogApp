@@ -6,10 +6,9 @@
 		<%= @user.bio%>
 	</div>
 
+	<%= render @user.posts	%>
 
+<%= link_to user_posts_path(@user) do %>
+<button>See All Posts</button>
+<%end%>
 
-	<% Post.where(author_id:@user.id).each do |post|%>
-		<li>
-			<%= post.title %>
-		</li>
-	<%end%>

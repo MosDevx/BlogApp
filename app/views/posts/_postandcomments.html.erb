@@ -1,0 +1,23 @@
+
+<% @posts.each do |post|  %>
+<%= link_to user_post_path(id:post.id) do%>
+<div>
+<h3>
+<%= post.title%> :
+</h3>
+
+<p>
+
+<%= post.text%>
+</p>
+
+<p>Comments: <%= post.comments_count || 0 %></p>
+<p>Likes: <%= post.likes_count ||0 %></p>
+
+</div>
+
+
+<%= render  partial:'/comments/comment' , collection:post.comments  %>
+<%end%>
+<%end%>
+
