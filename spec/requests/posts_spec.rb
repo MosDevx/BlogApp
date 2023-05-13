@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Posts", type: :request, :new => true do
+RSpec.describe "Posts", type: :request do
   describe "GET /index" do
     it "renders a successful response" do
       # user = User.create! valid_attributes #1
