@@ -12,4 +12,19 @@ class PostsController < ApplicationController
   def custom_post
     @post = Post.find(params[:id])
   end
+
+  def new
+    @post = Post.new
+  end
+
+  def create
+    @post = Post.new(user: @current_user, title: params[:title], text: params[:text])
+
+    if @post.save
+      redirect_to '/users'
+    else
+      puts 'Post not saved'
+      render 'new'
+    end
+  end
 end
