@@ -14,7 +14,6 @@ class PostsController < ApplicationController
   end
 
   def new
-    puts '^^^^^^^New is ^^'
     @post = Post.new
   end
 
