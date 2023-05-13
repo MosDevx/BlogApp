@@ -16,5 +16,8 @@
 	<p>Likes: <%= post.likes_count ||0 %></p>
 </div>
 
+<%= link_to new_user_post_comment_path(user_id:post.user_id,post_id:post.id) do %>
+	<button>Create New Comment</button>
+<%end%>
 </div>
 
