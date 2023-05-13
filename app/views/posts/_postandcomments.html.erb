@@ -2,9 +2,9 @@
 <% @posts.each do |post|  %>
 <%= link_to user_post_path(id:post.id) do%>
 <div class="post-main-div">
-<h3>
-<%= post.title%> :
-</h3>
+<b>
+post #<%= post.id%> 
+</b>
 
 <p>
 
@@ -19,7 +19,7 @@
 </div>
 
 
-<%= render  partial:'/comments/comment' , collection:post.comments  %>
+<%= render  partial:'/comments/comment' , collection:post.most_recent_comments  %>
 <%end%>
 <%end%>
 
