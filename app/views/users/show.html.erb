@@ -8,8 +8,8 @@
 
 
 
-	<% @user.posts.each do |post|%>
+	<% Post.where(author_id:@user.id).each do |post|%>
 		<li>
-			post.title
+			<%= post.title %>
 		</li>
 	<%end%>
