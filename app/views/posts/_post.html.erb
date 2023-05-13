@@ -1,6 +1,6 @@
 
 
-<div>
+<div class="post-main-div">
 <h3>
 <%= post.title%> :
 </h3>
@@ -10,8 +10,11 @@
 <%= post.text%>
 </p>
 
-<p>Comments: <%= post.comments_count || 0 %></p>
-<p>Likes: <%= post.likes_count ||0 %></p>
+<div class="comments-and-like-container">
+	<p>Comments: <%= post.comments_count || 0 %></p>
+	<br/>
+	<p>Likes: <%= post.likes_count ||0 %></p>
+</div>
 
 </div>
 
