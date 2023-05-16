@@ -1,6 +1,7 @@
 
-
+<% show_comments ||= false%>
 <div class=" border-2 border-blue-200 bg-cyan-300 flex-col space-y-2 p-4 m-2">
+
 <p class='text-2xl font-semibold'>
 post #<%= post.id%>  by <%= post.user.name%>
 </p>
@@ -30,6 +31,10 @@ post #<%= post.id%>  by <%= post.user.name%>
 		<%= form.submit "Like" %>
 	<% end %>
 </button>
+
+<% if show_comments%>
+<%= render  partial:'/comments/comment' , collection:post.most_recent_comments  %>
+<%end%>
 
 </div>
 

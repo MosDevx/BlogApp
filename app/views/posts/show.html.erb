@@ -1,6 +1,6 @@
-<%= render @post	%>
+
+<%= render partial:'posts/post', locals: {post:@post,show_comments:true} %>
 
 
 
-<%= render @post.comments	%>
 
