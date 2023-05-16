@@ -18,10 +18,11 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(user: @current_user, title: params[:title], text: params[:text])
+    @user = User.find(params[:user_id])
+    @post = Post.new(user: @user, title: params[:title], text: params[:text])
 
     if @post.save
-      redirect_to '/users'
+      redirect_to user_path(@user)
     else
       puts 'Post not saved'
       render 'new'
