@@ -4,7 +4,9 @@ class UsersController < ApplicationController
   end
 
   def show
+    @my_name = %w[A B C]
     @user = User.find(params[:id])
-    @recent_posts = @user.recent_posts
+    # @recent_posts = @user.recent_posts
+    # @all_po:insts = @user.posts
   end
 end

@@ -1,20 +1,19 @@
-
 	<%= render 'user', user:@user	%>
 
-	<div class='bio-main-div'>
+	<div class='bg-yellow-300 m-4 p-4'>
 
 
-	<h2>Bio</h2>
+	<h2 class="text-2xl font-bold">Bio</h2>
 		<%= @user.bio%>
 	</div>
 
 	<%= link_to new_user_post_path(@user) do %>
-<button>Create New Post</button>
+<button class="text-xl bg-blue-200 ring-8 p-4 m-4">Create New Post</button>
 <%end%>
 
-	<%= render @recent_posts	%>
+	<%= render @user.recent_posts if @user.recent_posts	%>
 
 <%= link_to user_posts_path(@user) do %>
-<button>See All Posts</button>
+<button class="text-xl bg-blue-200 ring-8 p-4 m-4">See All Posts</button>
 <%end%>
 

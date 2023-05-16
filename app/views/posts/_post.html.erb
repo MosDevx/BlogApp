@@ -1,32 +1,35 @@
 
 
-<div class="post-main-div">
-<b>
+<div class=" border-2 border-blue-200 bg-cyan-300 flex-col space-y-2 p-4 m-2">
+<p class='text-2xl font-semibold'>
 post #<%= post.id%>  by <%= post.user.name%>
-</b>
+</p>
 
-<p>
+<p class="text-xl font-semibold ">
 
 <%= post.text%>
 </p>
 
-<div class="comments-and-like-container">
+<div class=" flex w-48 bg-red-300 space-x-4">
 	<p>Comments: <%= post.comments_count || 0 %></p>
-	<br/>
+	
 	<p>Likes: <%= post.likes_count ||0 %></p>
 </div>
 
-<%= link_to new_user_post_comment_path(user_id:post.user_id,post_id:post.id) do %>
-	<button>Create New Comment</button>
-<%end%>
 
-<%# <%= link_to  user_post_likes_path() do %>
-	<%# <button>Like This Comment</button> %>
-<%# <%end%> 
+	<%= link_to new_user_post_comment_path(user_id:post.user_id,post_id:post.id) do %>
+		<button class="bg-yellow-300 ring-8 p-4 m-4 w-52 text-center hover:cursor-pointer">Create New Comment</button>
+	<%end%>
 
-          <%= form_with url: user_post_likes_path(user_id: post.user.id, post_id: post.id), scope: :data do |form| %>
-                <%= form.submit "Like" %>
-            <% end %>
+
+
+
+<button class="bg-red-200 w-32 text-center hover:cursor-pointer ring-8 p-4 m-4">
+	<%= form_with url: user_post_likes_path(user_id: post.user.id, post_id: post.id), scope: :data do |form| %>
+	
+		<%= form.submit "Like" %>
+	<% end %>
+</button>
 
 </div>
 
