@@ -13,11 +13,15 @@
 
   <body>
     <main class="container w-full m-auto bg-yellow-200 p-4">
+ 
     <% flash.each do |name,message|%>
       <div class="bg-green-200 p-4 m-4">
         <%= message %>
       </div>
     <%end%>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+ 
       <%= yield %>
     </main>
   </body>
