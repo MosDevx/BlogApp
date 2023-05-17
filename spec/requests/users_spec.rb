@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Users', type: :request  do
+RSpec.describe 'Users', type: :request do
   describe 'GET /index' do
     it 'returns http success' do
       get '/users'
@@ -9,12 +9,10 @@ RSpec.describe 'Users', type: :request  do
   end
 
   describe 'GET /users/:id' do
-		let!(:user) { User.create!(name: 'test', bio:'hey there') }
+    let!(:user) { User.create!(name: 'test', bio: 'hey there') }
     it 'returns the correct template' do
-      get 	user_path(user.id)
+      get	user_path(user.id)
       expect(response).to render_template(:show)
     end
-
-
   end
 end

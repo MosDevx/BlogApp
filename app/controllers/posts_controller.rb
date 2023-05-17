@@ -1,9 +1,8 @@
 class PostsController < ApplicationController
-  
   def index
     @user = User.find(params[:user_id])
     @posts = @user.posts
-    @tester = "herer"
+    @tester = 'herer'
   end
 
   def show
