@@ -3,12 +3,12 @@
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
 
-  <div class="field">
+  <div class="font-semibold">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus:true, autocomplete: "email" %>
   </div>
 
-  <div class="field">
+  <div class="font-semibold">
     <%= f.label :password %><br />
     <%= f.password_field :password, autocomplete: "current-password" %>
   </div>
@@ -20,7 +20,7 @@
     </div>
   <% end %>
 
-  <div class="mb-4 font-semibold ring-2">
+  <div class="p-2 mb-4 text-lg font-semibold w-fit ring-4">
     <%= f.submit "Log in" %>
   </div>
 <% end %>

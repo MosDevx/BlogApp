@@ -12,20 +12,20 @@
   </head>
 
   <body>
-    <main class="container w-full p-4 m-auto bg-yellow-200">
+    <main class="container justify-center w-full p-4 m-auto bg-yellow-200">
 
     <%if user_signed_in? %>
-    <div class="flex justify-between p-2 m-4">
-    <nav class="flex space-x-4 text-lg">
-      <%= link_to "Home", root_path, class: "font-semibold, ring-2" %>
-      <%= link_to "Users", users_path, class: "font-semibold, ring-2" %>
-      <%= link_to "Posts", user_posts_path(current_user.id), class: "font-semibold, ring-2" %>
+    <div class="flex justify-between m-4">
+    <nav class="flex p-2 space-x-4 text-lg">
+      <%= link_to "Home", root_path, class: "font-semibold " %>
+      <%= link_to "Users", users_path, class: "font-semibold" %>
+      <%= link_to "Posts", user_posts_path(current_user.id), class: "font-semibold" %>
     </nav>
   
-        <div class="flex space-x-4 ">
+        <div class="flex p-2 space-x-4 align-middle">
         <p>You are signed in as <b><%= current_user.name %></b></p>
-        <%= button_to "Sign out", destroy_user_session_path, method: :delete , class: "font-semibold, ring-2" %>
-        <%= link_to "Edit Profile", edit_user_registration_path, class: "font-semibold, ring-2"%>
+        <%= button_to "Sign out", destroy_user_session_path, method: :delete , class: "font-semibold" %>
+        <%= link_to "Edit Profile", edit_user_registration_path, class: "font-semibold"%>
     </div>
         </div>
    <% else %>
