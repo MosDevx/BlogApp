@@ -12,22 +12,15 @@
   </head>
 
   <body>
-    <main class="container w-full m-auto bg-yellow-200 p-4">
-    <%if user_signed_in? %>
-        <div class="flex justify-end space-x-4">
-        <p>You are signed in</p>
-        <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
-        <%= link_to "Edit Profile", edit_user_registration_path%>
-        </div>
-
-   <% else %>
-      <div class="flex justify-end ">
-        <p>Please sign in</p>
-      </div>
-    <%end%>
+    <main class="container w-full p-4 m-auto bg-yellow-200">
+  
+    <%# start here %>
+  
+  
+    <%# end here %>
 
     <% flash.each do |name,message|%>
-      <div class="bg-green-200 p-4 m-4">
+      <div class="p-4 m-4 bg-green-200">
         <%= message %>
       </div>
     <%end%>
