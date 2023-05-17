@@ -1,19 +1,23 @@
 	<%= render 'user', user:@user	%>
 
-	<div class='bg-yellow-300 m-4 p-4'>
+	<div class="flex justify-end m-4 font-semibold ring-2 w-fit">
+	<%= link_to 'Edit User Data', edit_user_path %>
+	</div>
+	
+	<div class='p-4 m-4 bg-yellow-300'>
 
 
-	<h2 class="text-2xl font-bold">Bio</h2>
+	<h2 class="text-2xl font-bold ">Bio</h2>
 		<%= @user.bio%>
 	</div>
 
 	<%= link_to new_user_post_path(@user) do %>
-<button class="text-xl bg-blue-200 ring-8 p-4 m-4">Create New Post</button>
+<button class="p-4 m-4 text-xl bg-blue-200 ring-8">Create New Post</button>
 <%end%>
 
 	<%= render @user.recent_posts if @user.recent_posts	%>
 
 <%= link_to user_posts_path(@user) do %>
-<button class="text-xl bg-blue-200 ring-8 p-4 m-4">See All Posts</button>
+<button class="p-4 m-4 text-xl bg-blue-200 ring-8">See All Posts</button>
 <%end%>
 
