@@ -17,6 +17,7 @@ class UsersController < ApplicationController
     @user = current_user
 
     if @user.update(user_params)
+    flash[:success] = 'Profile updated!!'
     redirect_to user_path(@user)
     else
     render :edit
