@@ -66,7 +66,7 @@ config.action_mailer.perform_deliveries = true
 
 
   # To allow tailwindcss to work in development, show new utulity classes in browser
-  # config.assets.compile = true
+  config.assets.compile = true
 
 
   # Raises error for missing translations.
