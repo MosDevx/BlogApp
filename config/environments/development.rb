@@ -64,6 +64,11 @@ config.action_mailer.perform_deliveries = true
   # Suppress logger output for asset requests.
   config.assets.quiet = true
 
+
+  # To allow tailwindcss to work in development, show new utulity classes in browser
+  config.assets.compile = true
+
+
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
 
