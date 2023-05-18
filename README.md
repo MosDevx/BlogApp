@@ -97,14 +97,14 @@ ITo begin with, you need to get your Rails application server running. This is l
 
 
 ```sh
- $ bin/rails server
+ $ ./bin/dev
 
 ```
 
 OR
 
 ```sh
-$ rails s
+$ ./bin/dev
 
 ```
 
