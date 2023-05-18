@@ -1,0 +1,21 @@
+<%= form_for(@user) do |f|%>
+	<div>
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+	</div>
+
+	<div>
+		<%= f.label :bio %>
+		<%= f.text_field :bio %>
+	</div>
+
+	<div>
+		<%= f.label :photo %>
+		<%= f.text_field :photo %>	
+	</div>
+	
+	<div class="m-4 font-semibold ring-2">
+		<%= f.submit "Update User Data" %>		
+	</div>
+
+<%end%>

@@ -4,7 +4,7 @@ RSpec.describe Post, type: :model do
   @user = User.new(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
                    bio: 'Teacher from Mexico.')
 
-  subject { described_class.new(title: 'This is a title', text: 'This is a text', author: @user) }
+  subject { described_class.new(title: 'This is a title', text: 'This is a text', user: @user) }
 
   it 'is not valid without a title' do
     subject.title = nil
@@ -16,8 +16,8 @@ RSpec.describe Post, type: :model do
     expect(subject).to_not be_valid
   end
 
-  it 'is not valid without an author_id' do
-    subject.author_id = nil
+  it 'is not valid without an user_id' do
+    subject.user_id = nil
     expect(subject).to_not be_valid
   end
 

@@ -12,7 +12,34 @@
   </head>
 
   <body>
-    <main class="container w-full m-auto bg-yellow-200 p-4">
+    <main class="container justify-center w-full p-4 m-auto bg-yellow-200">
+
+    <%if user_signed_in? %>
+    <div class="flex justify-between m-4">
+    <nav class="flex p-2 space-x-4 text-lg">
+      <%= link_to "Home", root_path, class: "font-semibold " %>
+      <%= link_to "Users", users_path, class: "font-semibold" %>
+      <%= link_to "My Posts", user_posts_path(current_user.id), class: "font-semibold" %>
+    </nav>
+  
+        <div class="flex p-2 space-x-4 align-middle">
+        <p>You are signed in as <b><%= current_user.name %></b></p>
+        <%= button_to "Sign out", destroy_user_session_path, method: :delete , class: "font-semibold" %>
+        <%= link_to "Edit Profile", edit_user_registration_path, class: "font-semibold"%>
+    </div>
+        </div>
+   <% else %>
+      <div class="flex justify-end ">
+        <%# <p>Please Sign In</p> %>
+      </div>
+<%end%>
+
+    <% flash.each do |name,message|%>
+      <div class="p-4 m-4 bg-green-200">
+        <%= message %>
+      </div>
+    <%end%>
+ 
       <%= yield %>
     </main>
   </body>
