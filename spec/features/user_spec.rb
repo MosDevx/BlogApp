@@ -11,6 +11,7 @@ RSpec.feature 'Users', type: :feature do
   after(:all) do
     @user.destroy
     @post.destroy
+    @post2.destroy
   end
 
   it 'displays a users profile picture' do

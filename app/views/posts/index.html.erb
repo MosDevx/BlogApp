@@ -2,4 +2,6 @@
 
 <%= render @user%>
 
+<%= will_paginate @posts %>
 <%= render partial:'posts/post', collection:@posts, locals: {show_comments:true} %>
+<%= will_paginate @posts %>
