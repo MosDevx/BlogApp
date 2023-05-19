@@ -84,4 +84,4 @@ end
 
 gem 'tailwindcss-rails', '~> 2.0'
 
-gem 'will_paginate', '~> 3.1.0'
+gem 'kaminari', '~> 1.2', '>= 1.2.1'

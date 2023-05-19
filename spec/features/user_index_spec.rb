@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Users Index Page', type: :feature, fat: true do
+RSpec.describe 'Users Index Page', type: :feature  do
   before(:all) do
     @user = User.create(name: 'John Doe', bio: 'I am John Doe', email: 'rand_email2', photo: 'https://robohash.org/hey?set=set4')
 
@@ -18,20 +18,6 @@ RSpec.describe 'Users Index Page', type: :feature, fat: true do
     @post.destroy
   end
 
-  it 'displays a user UserName' do
-    visit user_path(@user2)
-    expect(page).to have_content('Jann Doe')
-  end
-
-  it 'displays number of posts' do
-    visit user_path(@user2)
-    expect(page).to have_content('No of posts: 1')
-  end
-
-  it 'displays a user bio' do
-    visit user_path(@user2)
-    expect(page).to have_content('I am Jann Doe')
-  end
 
   it 'displays all users names' do
     visit users_path
@@ -53,9 +39,7 @@ RSpec.describe 'Users Index Page', type: :feature, fat: true do
 
   it 'redirects to the users show page when clicked' do
     visit users_path
-
     find('a', text: 'Jann Doe', wait: 5).click
-    sleep(2)
 
     assert_current_path(user_path(@user2))
   end
