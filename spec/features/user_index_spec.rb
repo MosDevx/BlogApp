@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Users Index Page', type: :feature  do
+RSpec.describe 'Users Index Page', type: :feature do
   before(:all) do
     @user = User.create(name: 'John Doe', bio: 'I am John Doe', email: 'rand_email2', photo: 'https://robohash.org/hey?set=set4')
 
@@ -17,7 +17,6 @@ RSpec.describe 'Users Index Page', type: :feature  do
     @user2.destroy
     @post.destroy
   end
-
 
   it 'displays all users names' do
     visit users_path

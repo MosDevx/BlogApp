@@ -12,9 +12,9 @@ RSpec.describe 'Posts Index', type: :feature do
   after(:all) do
     @user.destroy
     @post.destroy
-		@post1.destroy
-		@post2.destroy
-		@comment.destroy
+    @post1.destroy
+    @post2.destroy
+    @comment.destroy
   end
 
   it 'displays users profile picture' do
@@ -63,10 +63,9 @@ RSpec.describe 'Posts Index', type: :feature do
     expect(page).to have_content('Hello')
   end
 
-	it 'will paginate posts' do
-		visit user_posts_path(@user)
-		expect(page).to have_content('Next')
-		expect(page).to have_content('Last')
-	end
-
+  it 'will paginate posts' do
+    visit user_posts_path(@user)
+    expect(page).to have_content('Next')
+    expect(page).to have_content('Last')
+  end
 end
