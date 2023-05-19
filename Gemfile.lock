@@ -280,7 +280,6 @@ DEPENDENCIES
   rails-controller-testing
   rails_live_reload
   rspec-rails
-  selenium-webdriver
   sprockets-rails
   stimulus-rails
   tailwindcss-rails (~> 2.0)
