@@ -20,4 +20,15 @@ RSpec.describe 'Posts', type: :feature, feat: true do
     visit user_post_path(user_id: @user.id, id: @post.id)
     expect(page).to have_content('Teacher')
   end
+
+  it 'redirects to all posts page when button is clicked' do
+    visit user_path(@user)
+    click_button 'See All Posts'
+    expect(page).to have_content('All Posts')
+  end
+
+  it 'displays button to see all posts' do
+    visit user_path(@user)
+    expect(page).to have_selector(:link_or_button, 'See All Posts')
+  end
 end
