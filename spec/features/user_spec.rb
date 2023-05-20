@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'Users', type: :feature do
+RSpec.feature 'User', type: :feature do
   before(:all) do
     @user = User.create(name: 'Jann Doe', bio: 'I am Jann Doe', email: 'ran.com', photo: 'https://robohash.org/hey?set=set4')
     @post = Post.create(user_id: @user.id, title: 'Hello', text: 'Teacher need to get trained')
@@ -59,7 +59,7 @@ RSpec.feature 'User show', type: :feature do
   end
 end
 
-RSpec.feature 'User show', type: :feature do
+RSpec.feature 'User show and nav', type: :feature do
   before(:all) do
     @user = User.create(name: 'Jann Doe', bio: 'I am Jann Doe', email: 'ran.com', photo: 'https://robohash.org/hey?set=set4')
     @post = Post.create(user_id: @user.id, title: 'Hello', text: 'Teacher need to get trained')
