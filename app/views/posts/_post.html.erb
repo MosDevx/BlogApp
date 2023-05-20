@@ -10,7 +10,9 @@
 Post #<%= post.id%>  by <%= post.user.name%>
 
 </p>
-
+<p class="text-3xl font-semibold">
+<%= post.title%>
+</p>
 <p class="text-xl font-medium ">
 
 <%= post.text%>
@@ -36,7 +38,7 @@ Post #<%= post.id%>  by <%= post.user.name%>
 
 <%# show comments if specifically asked for by render  %>
 <% if show_comments%>
-<%= render  partial:'/comments/comment' , collection:post.most_recent_comments  %>
+<%= render  partial:'/comments/comment' , collection:post.comments  %>
 <%end%>
 
 </div>

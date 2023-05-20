@@ -114,6 +114,18 @@ GEM
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
+    kaminari (1.2.2)
+      activesupport (>= 4.1.0)
+      kaminari-actionview (= 1.2.2)
+      kaminari-activerecord (= 1.2.2)
+      kaminari-core (= 1.2.2)
+    kaminari-actionview (1.2.2)
+      actionview
+      kaminari-core (= 1.2.2)
+    kaminari-activerecord (1.2.2)
+      activerecord
+      kaminari-core (= 1.2.2)
+    kaminari-core (1.2.2)
     launchy (2.5.2)
       addressable (~> 2.8)
     letter_opener (1.8.1)
@@ -273,6 +285,7 @@ DEPENDENCIES
   dotenv-rails
   importmap-rails
   jbuilder
+  kaminari (~> 1.2, >= 1.2.1)
   letter_opener
   pg (~> 1.1)
   puma (~> 5.0)
@@ -280,7 +293,6 @@ DEPENDENCIES
   rails-controller-testing
   rails_live_reload
   rspec-rails
-  selenium-webdriver
   sprockets-rails
   stimulus-rails
   tailwindcss-rails (~> 2.0)

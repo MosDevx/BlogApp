@@ -60,8 +60,8 @@ group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'rails-controller-testing'
   gem 'rspec-rails'
-  gem 'selenium-webdriver'
   gem 'webdrivers'
+  # gem 'webdrivers', '~> 5.0', require: false
 end
 
 group :development do
@@ -83,3 +83,5 @@ group :test do
 end
 
 gem 'tailwindcss-rails', '~> 2.0'
+
+gem 'kaminari', '~> 1.2', '>= 1.2.1'

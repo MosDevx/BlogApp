@@ -1,18 +1,14 @@
 class PostsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
-    @posts = @user.posts
-    @tester = 'herer'
+    @posts = Post.includes(:user, comments: :user).where(user_id: params[:user_id]).page(params[:page]).per(1)
+    # @user = @posts.user
   end
 
   def show
-    @post = Post.find(params[:id])
+    @post = Post.includes(:comments).find(params[:id])
     # @comments = @post.comments
   end
-
-  # def custom_post
-  #   @post = Post.find(params[:id])
-  # end
 
   def new
     @post = Post.new
